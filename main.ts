@@ -439,6 +439,30 @@ if (typeof mainColor == "number") {
             }
         }
     }
+    for (let value15 of sprites.allOfKind(SpriteKind.DefenderTackling)) {
+        let mainColor = Teams.getTeamProperty(opponentTeam, Teams.TeamProperty.MainColor) as number
+let secondaryColor = Teams.getTeamProperty(opponentTeam, Teams.TeamProperty.SecondaryColor) as number
+let sockColor = Teams.getTeamProperty(opponentTeam, Teams.TeamProperty.SockColor) as number
+if (typeof mainColor == "number") {
+            if (Teams.containsColors(value15.image)) {
+                value15.image.replace(9, mainColor)
+                value15.image.replace(3, secondaryColor)
+                value15.image.replace(7, sockColor)
+            }
+        }
+    }
+    for (let value15 of sprites.allOfKind(SpriteKind.DefenderThatTackled)) {
+        let mainColor = Teams.getTeamProperty(opponentTeam, Teams.TeamProperty.MainColor) as number
+let secondaryColor = Teams.getTeamProperty(opponentTeam, Teams.TeamProperty.SecondaryColor) as number
+let sockColor = Teams.getTeamProperty(opponentTeam, Teams.TeamProperty.SockColor) as number
+if (typeof mainColor == "number") {
+            if (Teams.containsColors(value15.image)) {
+                value15.image.replace(9, mainColor)
+                value15.image.replace(3, secondaryColor)
+                value15.image.replace(7, sockColor)
+            }
+        }
+    }
 }
 // Adjust this value to control the lerp speed
 function lerpCameraX (targetX: number) {
@@ -789,6 +813,42 @@ if (typeof mainColor2 == "number") {
             }
         }
     }
+    for (let value22 of sprites.allOfKind(SpriteKind.PlayerWithPossession)) {
+        let mainColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.MainColor) as number
+let secondaryColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.SecondaryColor) as number
+let sockColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.SockColor) as number
+if (typeof mainColor2 == "number") {
+            if (Teams.containsColors(value22.image)) {
+                value22.image.replace(9, mainColor2)
+                value22.image.replace(3, secondaryColor2)
+                value22.image.replace(7, sockColor2)
+            }
+        }
+    }
+    for (let value22 of sprites.allOfKind(SpriteKind.PlayerInEndzone)) {
+        let mainColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.MainColor) as number
+let secondaryColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.SecondaryColor) as number
+let sockColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.SockColor) as number
+if (typeof mainColor2 == "number") {
+            if (Teams.containsColors(value22.image)) {
+                value22.image.replace(9, mainColor2)
+                value22.image.replace(3, secondaryColor2)
+                value22.image.replace(7, sockColor2)
+            }
+        }
+    }
+    for (let value22 of sprites.allOfKind(SpriteKind.NonPlayerPlayers)) {
+        let mainColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.MainColor) as number
+let secondaryColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.SecondaryColor) as number
+let sockColor2 = Teams.getTeamProperty(CurrentTeam, Teams.TeamProperty.SockColor) as number
+if (typeof mainColor2 == "number") {
+            if (Teams.containsColors(value22.image)) {
+                value22.image.replace(9, mainColor2)
+                value22.image.replace(3, secondaryColor2)
+                value22.image.replace(7, sockColor2)
+            }
+        }
+    }
 }
 modes.whenModeChanged("defense", function (value) {
 	
@@ -1035,11 +1095,11 @@ let endingplay = false
 let willScore = false
 let fumbleOdds = 0
 let interceptionOdds = 0
-let chanceOfScoring = 0
-let opponentYardage = 0
-let playResult = ""
-let CurrentTeam = 0
 let opponentTeam: Teams.TeamEnum = null
+let CurrentTeam = 0
+let playResult = ""
+let opponentYardage = 0
+let chanceOfScoring = 0
 opponentYardage = 25
 interceptionOdds = 0.15
 fumbleOdds = 0.15
@@ -1048,7 +1108,7 @@ modes.addMode("preSnap")
 modes.addMode("onPlay")
 endingplay = false
 CurrentAwayTeam = Teams.getTeamFromEnum(Teams.TeamEnum.PHI)
-CurrentHomeTeam = Teams.getTeamFromEnum(Teams.TeamEnum.LAR)
+CurrentHomeTeam = Teams.getTeamFromEnum(Teams.TeamEnum.KC)
 CurrentTeam = CurrentHomeTeam
 _play = 0
 playFormationImagesArray = [assets.image`play1`, img`
